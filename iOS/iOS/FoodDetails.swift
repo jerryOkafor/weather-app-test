@@ -17,26 +17,25 @@ struct FoodDetails : View {
                 VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 20){
                     Text(food.image)
                         .frame(width: 250, height: 250, alignment: .center)
-                        
                             .scaleEffect(10.0)
                    
-                    HStack{
+                    HStack(alignment:.top){
                         VStack(alignment: .leading, spacing: 0){
-                            Text("\(food.nutrients)").bold()
+                            Text("\(food.nutrients)").bold().font(.title)
                            
                         }
-                        Spacer()
-                        Text("₦ \(food.price)")
+                        Spacer(minLength: 20)
+                        Text("₦ \(food.price)").bold().font(.title)
                     }.padding(.horizontal,20)
                     
                     HStack(alignment: .center, spacing: 20, content: {
                         VStack(alignment: .leading, spacing: 8, content: {
-                            Text("From")
+                            Text("From").foregroundColor(.gray)
                             Text("\(food.from)")
                         })
                         Spacer()
                         VStack(alignment: .center, spacing: 8, content: {
-                            Text("Quantity")
+                            Text("Quantity").foregroundColor(.gray)
                             Text("\(food.quantity)")
                         })
                         
@@ -45,7 +44,7 @@ struct FoodDetails : View {
                     }).padding(.horizontal,20)
                     
                     VStack(alignment: .leading, spacing: 8, content: {
-                        Text("Description")
+                        Text("Description").foregroundColor(.gray)
                         Text(food.description)
                     }).padding(.horizontal,20)
                     
