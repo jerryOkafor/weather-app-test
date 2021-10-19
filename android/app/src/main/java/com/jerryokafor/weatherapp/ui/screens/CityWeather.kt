@@ -249,7 +249,7 @@ fun CityItem(
                 Text(annotatedString)
             }
             Text(
-                text = "${item.main?.temp?.fromMetric()?.toInt()} °",
+                text = "${item.main?.temp?.fromMetric()} °",
                 style = MaterialTheme.typography.h4,
                 color = Color(0x73000000)
             )
